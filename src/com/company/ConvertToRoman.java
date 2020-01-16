@@ -1,8 +1,10 @@
 package com.company;
 
-public class ConvertToRoman {
-    public static String IntegerToRomanNumeral(int input) {
-        if (input < 1 || input > 3999)
+public class ConvertToRoman implements Converter<Integer,String>{
+
+    @Override
+    public String convert(Integer input) {
+        if (input < 1 || input > 100)
             return "Invalid Roman Number Value";
         String s = "";
         while (input >= 100) {
